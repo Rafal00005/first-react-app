@@ -35,19 +35,46 @@ const List = () => {
 			],
 		},
 	]);
-    //  nowe kolumny startują z pustym cards: []
-  const addColumn = (newColumn) => {
-    setColumns((prev) => [
-      ...prev,
-      { id: shortid(), title: newColumn.title, icon: newColumn.icon, cards: [] },
-    ]);
-  };
+
+	// nowe kolumny startują z pustym cards: []
+	const addColumn = (newColumn) => {
+		setColumns((prev) => [
+			...prev,
+			{
+				id: shortid(),
+				title: newColumn.title,
+				icon: newColumn.icon,
+				cards: [],
+			},
+		]);
+	};
+
+	// ZMIENIONA FUNKCJA - używa prev zamiast columns
+	const addCard = (newCard, columnId) => {
+		setColumns((prev) =>
+			prev.map((column) => {
+				if (column.id === columnId)
+					return {
+						...column,
+						cards: [...column.cards, { id: shortid(), title: newCard.title }],
+					};
+				else return column;
+			})
+		);
+	};
 
 	return (
 		<div className={styles.list}>
 			<section className={styles.columns}>
 				{columns.map((col) => (
-					<Column key={col.id} title={col.title} icon={col.icon} />
+					<Column
+						key={col.id}
+						id={col.id}
+						title={col.title}
+						icon={col.icon}
+						cards={col.cards}
+						addCard={addCard}
+					/>
 				))}
 			</section>
 

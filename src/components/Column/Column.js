@@ -1,4 +1,6 @@
+import Card from '../Card/Card';
 import styles from './Column.module.scss';
+import CardForm from '../CardForm/CardForm';
 
 const Column = (props) => {
 	return (
@@ -8,11 +10,11 @@ const Column = (props) => {
 				{props.title}
 			</h2>
 
-			{/* TU: zamiast <div> używamy <ul> i renderujemy <li> */}
 			<ul className={styles.cards}>
 				{props.cards &&
-					props.cards.map((card) => <li key={card.id}>{card.title}</li>)}
+					props.cards.map((card) => <Card key={card.id} title={card.title} />)}
 			</ul>
+			<CardForm action={(newCard) => props.addCard(newCard, props.id)} />
 		</article>
 	);
 };
