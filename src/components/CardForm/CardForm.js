@@ -3,12 +3,12 @@ import { useState } from 'react';
 import TextInput from '../TextInput/TextInput';
 import Button from '../Button/Button';
 
-const CardForm = (props) => {
+const CardForm = () => {
 	const [title, setTitle] = useState('');
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		props.action({ title: title });
+		//props.action({ title: title });//
 		setTitle('');
 	};
 

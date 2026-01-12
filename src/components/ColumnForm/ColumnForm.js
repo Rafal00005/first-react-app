@@ -1,14 +1,14 @@
 import { useState } from 'react';
 import styles from './ColumnForm.module.scss';
 
-const ColumnForm = ({ action }) => {
+const ColumnForm = () => {
 	const [title, setTitle] = useState('');
 	const [icon, setIcon] = useState('');
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		if (!title.trim()) return;
-		action({ title, icon }); // ← przekazujemy oba pola
+		//action({ title, icon }); // ← przekazujemy oba pola//
 		setTitle(''); // czyścimy formularz
 		setIcon('');
 	};
