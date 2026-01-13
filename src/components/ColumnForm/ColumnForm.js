@@ -1,15 +1,17 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import styles from './ColumnForm.module.scss';
 
 const ColumnForm = () => {
 	const [title, setTitle] = useState('');
 	const [icon, setIcon] = useState('');
+	const dispatch = useDispatch();
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		if (!title.trim()) return;
-		//action({ title, icon }); // ← przekazujemy oba pola//
-		setTitle(''); // czyścimy formularz
+		dispatch({ type: 'ADD_COLUMN', newColumn: { title, icon } });
+		setTitle('');
 		setIcon('');
 	};
 
