@@ -13,6 +13,8 @@ const reducer = (state, action) => {
 				...state,
 				cards: [...state.cards, { ...action.payload, id: Math.random() }],
 			};
+		case 'UPDATE_SEARCHSTRING':
+			return { ...state, searchString: action.payload };
 		default:
 			return state;
 	}
