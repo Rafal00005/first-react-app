@@ -1,0 +1,40 @@
+@import '../../styles/settings';
+
+.navBar {
+	background-color: darken($color-dark, 3%);
+	padding: 20px 0;
+}
+
+.navContent {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.logo {
+	font-size: 24px;
+	color: white;
+	text-decoration: none;
+
+	&:hover {
+		opacity: 0.8;
+	}
+}
+
+.navLinks {
+	display: flex;
+	list-style: none;
+	gap: 30px;
+	margin: 0;
+	padding: 0;
+
+	a {
+		color: white;
+		text-decoration: none;
+		font-weight: 500;
+
+		&:hover {
+			opacity: 0.8;
+		}
+	}
+}
