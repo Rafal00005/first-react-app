@@ -4,6 +4,7 @@ import Container from './components/Container/Container';
 import Home from './components/Home/Home';
 import About from './components/About/About';
 import Favorite from './components/Favorite/Favorite';
+import NotFound from './components/NotFound/NotFound';
 
 const App = () => {
 	return (
@@ -14,6 +15,7 @@ const App = () => {
 					<Route path='/' element={<Home />} />
 					<Route path='/about' element={<About />} />
 					<Route path='/favorite' element={<Favorite />} />
+					<Route path='*' element={<NotFound />} />
 				</Routes>
 			</Container>
 		</main>
@@ -21,4 +23,3 @@ const App = () => {
 };
 
 export default App;
-
