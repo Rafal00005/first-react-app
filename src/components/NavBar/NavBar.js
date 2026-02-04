@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import Container from '../Container/Container';
 import styles from './NavBar.module.scss';
 
@@ -6,18 +7,39 @@ const NavBar = () => {
 		<nav className={styles.navBar}>
 			<Container>
 				<div className={styles.navContent}>
-					<a href='/' className={styles.logo}>
+					<NavLink to='/' className={styles.logo}>
 						<i className='fa fa-tasks'></i>
-					</a>
+					</NavLink>
 					<ul className={styles.navLinks}>
 						<li>
-							<a href='/'>Home</a>
+							<NavLink
+								className={({ isActive }) =>
+									isActive ? styles.linkActive : undefined
+								}
+								to='/'
+							>
+								Home
+							</NavLink>
 						</li>
 						<li>
-							<a href='/favorite'>Favorite</a>
+							<NavLink
+								className={({ isActive }) =>
+									isActive ? styles.linkActive : undefined
+								}
+								to='/favorite'
+							>
+								Favorite
+							</NavLink>
 						</li>
 						<li>
-							<a href='/about'>About</a>
+							<NavLink
+								className={({ isActive }) =>
+									isActive ? styles.linkActive : undefined
+								}
+								to='/about'
+							>
+								About
+							</NavLink>
 						</li>
 					</ul>
 				</div>
