@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { addColumn } from '../../redux/store';
 import styles from './ColumnForm.module.scss';
 
-const ColumnForm = () => {
+const ColumnForm = ({ listId }) => {
 	const [title, setTitle] = useState('');
 	const [icon, setIcon] = useState('');
 	const dispatch = useDispatch();
@@ -11,7 +11,7 @@ const ColumnForm = () => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		if (!title.trim()) return;
-		dispatch(addColumn({ title, icon }));
+		dispatch(addColumn({ title, icon, listId }));
 		setTitle('');
 		setIcon('');
 	};
