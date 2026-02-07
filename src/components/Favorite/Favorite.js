@@ -1,13 +1,24 @@
+import { useSelector } from 'react-redux';
+import { getFavoriteCards } from '../../redux/store';
+import Card from '../Card/Card';
+import PageTitle from '../PageTitle/PageTitle';
 import styles from './Favorite.module.scss';
 
 const Favorite = () => {
+	const favoriteCards = useSelector(getFavoriteCards);
+
 	return (
 		<div className={styles.favorite}>
-			<h2 className={styles.title}>Favorite</h2>
-			<p>
-				Your favorite cards will appear here. Mark cards as favorite to see them
-				in this section.
-			</p>
+			<PageTitle>Favorite cards</PageTitle>
+			{favoriteCards.length > 0 ? (
+				<section className={styles.cards}>
+					{favoriteCards.map((card) => (
+						<Card key={card.id} {...card} />
+					))}
+				</section>
+			) : (
+				<p className={styles.noCards}>No cards...</p>
+			)}
 		</div>
 	);
 };

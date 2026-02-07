@@ -1,20 +1,20 @@
+@use 'sass:math';
 @import '../../styles/settings';
 
 .favorite {
+	padding: $base-size * 2;
+}
+
+.cards {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	gap: $base-size * 2;
+	margin-top: $base-size * 2;
+}
+
+.noCards {
 	text-align: center;
-	padding: 40px 0;
-}
-
-.title {
-	font-size: 32px;
 	color: $color-light;
-	margin-bottom: 30px;
-}
-
-.favorite p {
-	font-size: 16px;
-	color: $color-light;
-	line-height: 1.6;
-	max-width: 600px;
-	margin: 0 auto;
+	font-size: 18px;
+	margin-top: $base-size * 3;
 }
