@@ -12,7 +12,7 @@ const CardForm = ({ columnId }) => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		if (!title.trim()) return;
-		dispatch(addCard({ title, columnId }));
+		dispatch(addCard({ title, columnId, isFavorite: false }));
 		setTitle('');
 	};
 

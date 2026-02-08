@@ -12,7 +12,14 @@ const reducer = (state, action) => {
 		case 'ADD_CARD':
 			return {
 				...state,
-				cards: [...state.cards, { ...action.payload, id: Math.random() }],
+				cards: [
+					...state.cards,
+					{
+						...action.payload,
+						id: Math.random().toString(),
+						isFavorite: false,
+					},
+				],
 			};
 		case 'UPDATE_SEARCHSTRING':
 			return { ...state, searchString: action.payload };
