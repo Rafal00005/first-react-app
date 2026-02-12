@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import { getFavoriteCards } from '../../redux/store';
+import { getFavoriteCards } from '../../redux/CardsRedux';
 import Card from '../Card/Card';
 import PageTitle from '../PageTitle/PageTitle';
 import styles from './Favorite.module.scss';
@@ -13,7 +13,7 @@ const Favorite = () => {
 			{favoriteCards.length > 0 ? (
 				<section className={styles.cards}>
 					{favoriteCards.map((card) => (
-						<Card key={card.id} {...card} />
+						<Card key={card.id} {...card} showRemoveButton={true} />
 					))}
 				</section>
 			) : (

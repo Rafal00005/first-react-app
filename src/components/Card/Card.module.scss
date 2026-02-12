@@ -35,3 +35,8 @@
 .favoriteButton.active i {
 	color: #ffc107;
 }
+.buttons {
+	display: flex;
+	flex-direction: row-reverse;
+	gap: 8px;
+}

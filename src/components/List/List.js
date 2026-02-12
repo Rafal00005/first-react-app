@@ -4,7 +4,8 @@ import Column from '../Column/Column';
 import SearchForm from '../SearchForm/SearchForm';
 import styles from './List.module.scss';
 import ColumnForm from '../ColumnForm/ColumnForm';
-import { getColumnsByList, getListById } from '../../redux/store';
+import { getListById } from '../../redux/ListsRedux';
+import { getColumnsByList } from '../../redux/ColumnsRedux';
 
 const List = () => {
 	const { listId } = useParams();

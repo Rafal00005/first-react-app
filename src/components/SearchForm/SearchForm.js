@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { updateSearchString } from '../../redux/store';
+import { updateSearchString } from '../../redux/SearchStringRedux';
 import styles from './SearchForm.module.scss';
 import Button from '../Button/Button';
 
